@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Information Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #33245a;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #33245a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #52427c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Health Information Form</h1>
+        <form action="{{ url_for('brain') }}" method="POST">
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="0" placeholder="Enter your age" required>
+            </div>
+            <!-- Pregnancies -->
+            <div class="form-group">
+                <label for="pregnancies">Pregnancies</label>
+                <input type="number" id="pregnancies" name="pregnancies" min="0" placeholder="Enter number of pregnancies" required>
+            </div>
+            <!-- BMI -->
+            <div class="form-group">
+                <label for="bmi">BMI</label>
+                <input type="number" id="bmi" name="bmi" min="0" step="0.01" placeholder="Enter your BMI" required>
+            </div>
+            <!-- Glucose -->
+            <div class="form-group">
+                <label for="glucose">Glucose</label>
+                <input type="number" id="glucose" name="glucose" step="0.01" placeholder="Enter glucose level" required>
+            </div>
+            <!-- Blood Pressure -->
+            <div class="form-group">
+                <label for="bloodpressure">Blood Pressure</label>
+                <input type="number" id="bloodpressure" name="bloodpressure" step="0.01" placeholder="Enter blood pressure" required>
+            </div>
+            <!-- HbA1c -->
+            <div class="form-group">
+                <label for="hba1c">HbA1c</label>
+                <input type="number" step="0.1" id="hba1c" name="hba1c" step="0.01" placeholder="Enter HbA1c value" required>
+            </div>
+            <!-- LDL -->
+            <div class="form-group">
+                <label for="ldl">LDL</label>
+                <input type="number" id="ldl" name="ldl" step="0.01" placeholder="Enter LDL level" required>
+            </div>
+            <!-- HDL -->
+            <div class="form-group">
+                <label for="hdl">HDL</label>
+                <input type="number" id="hdl" name="hdl" step="0.01" placeholder="Enter HDL level" required>
+            </div>
+            <!-- Triglycerides -->
+            <div class="form-group">
+                <label for="triglycerides">Triglycerides</label>
+                <input type="number" id="triglycerides" step="0.01" name="triglycerides" placeholder="Enter triglycerides level" required>
+            </div>
+            <!-- Waist Circumference -->
+            <div class="form-group">
+                <label for="waistcircumference">Waist Circumference</label>
+                <input type="number" id="waistcircumference" step="0.01" name="waistcircumference" placeholder="Enter waist circumference" required>
+            </div>
+            <!-- Hip Circumference -->
+            <div class="form-group">
+                <label for="hipcircumference">Hip Circumference</label>
+                <input type="number" id="hipcircumference" step="0.01" name="hipcircumference" placeholder="Enter hip circumference" required>
+            </div>
+            <!-- WHR -->
+            <div class="form-group">
+                <label for="whr">Waist-to-Hip Ratio (WHR)</label>
+                <input type="number" step="0.01" id="whr" name="whr" placeholder="Enter WHR" required>
+            </div>
+            <!-- Family History -->
+            <div class="form-group">
+                <label for="familyhistory">Family History (1=Yes, 0=No)</label>
+                <input type="number" id="familyhistory" name="familyhistory" min="0" max="1" placeholder="1 for Yes, 0 for No" required>
+            </div>
+            <!-- Diet Type -->
+            <div class="form-group">
+                <label for="diettype">Diet Type (1=Vegetarian, 2=Non-Vegetarian, 3=Vegan)</label>
+                <input type="number" id="diettype" name="diettype" min="1" max="3" placeholder="Enter diet type" required>
+            </div>
+            <!-- Hypertension -->
+            <div class="form-group">
+                <label for="hypertension">Hypertension (1=Yes, 0=No)</label>
+                <input type="number" id="hypertension" name="hypertension" min="0" max="1" placeholder="1 for Yes, 0 for No" required>
+            </div>
+            <!-- Medication Use -->
+            <div class="form-group">
+                <label for="medicationuse">Medication Use (1=Yes, 0=No)</label>
+                <input type="number" id="medicationuse" name="medicationuse" min="0" max="1" placeholder="1 for Yes, 0 for No" required>
+            </div>
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
